@@ -14,8 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+#from django.views.generic import ListView, DetailView
+#from blog.models import Post
+
 from django.contrib import admin
+from dating_project.view import hello
+from dating_project.testdb import testdb
+
+#from . import views
+#from django.contrib import admin
+
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^hello/$',hello),
+    url(r'^testdb/$',testdb),
+    #url(r'^$', include('personal.urls')),
+    #url(r'^personal/$', dating_project.views.index, name='index'),
+    #url(r'^$', ListView.as_view(queryset=Post.objects.all().order_bytemplate_name="blog/blog.html")),
+    #url(r'^(?P<pk>)'),
 ]
