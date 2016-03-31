@@ -21,6 +21,7 @@ from django.contrib import admin
 from dating_project.view import hello
 from dating_project.testdb import testdb
 from dating_project import search
+from dating_project import search2
 
 #from . import views
 #from django.contrib import admin
@@ -33,4 +34,5 @@ urlpatterns = [
     url(r'^testdb/$',testdb),
     url(r'^search_form/$',search.search_form),
     url(r'^search/$',search.search),
+    url(r'^search-post/$',search2.search_post)
 ]
