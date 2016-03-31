@@ -20,6 +20,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from dating_project.view import hello
 from dating_project.testdb import testdb
+from dating_project import search
 
 #from . import views
 #from django.contrib import admin
@@ -30,8 +31,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$',hello),
     url(r'^testdb/$',testdb),
-    #url(r'^$', include('personal.urls')),
-    #url(r'^personal/$', dating_project.views.index, name='index'),
-    #url(r'^$', ListView.as_view(queryset=Post.objects.all().order_bytemplate_name="blog/blog.html")),
-    #url(r'^(?P<pk>)'),
+    url(r'^search_form/$',search.search_form),
+    url(r'^search/$',search.search),
 ]
