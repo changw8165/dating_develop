@@ -53,12 +53,12 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'dating_project.urls'
 
-TEMPLATE_DIRS = (
-	'/Users/William/Desktop/develop/bin/dating_project/blog/templates/personal',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+# TEMPLATE_DIRS = (
+# 	'/Users/William/Desktop/develop/bin/dating_project/blog/templates/personal',
+#     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+#     # Always use forward slashes, even on Windows.
+#     # Don't forget to use absolute paths, not relative paths.
+# )
 
 TEMPLATES = [
     {
@@ -83,23 +83,42 @@ WSGI_APPLICATION = 'dating_project.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+#       'default': {
+#           'ENGINE': 'django.db.backends.sqlite3',
+#           'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#       }
+#  }
 
 DATABASES = {
-        'default':{
-            'ENGINE':'django.db.backends.mysql',
-            'NAME': 'phonegap_demo',
-            'USER': 'root',
-            'PASSWORD': 'root',
-            'HOST' : 'localhost',
-            'PORT' : '3306',
-
-        }
+    'default':{
+        'ENGINE':'django.db.backends.mysql',
+          'NAME': 'django_db',
+          'USER': 'djangouser',
+          'PASSWORD': 'mypassword',
+          'HOST' : 'localhost',
+          'PORT' : '3306',
+    },
+    'other':{
+        'ENGINE':'django.db.backends.mysql',
+        'NAME': 'phonegap_demo',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
+    }
 }
+
+# DATABASES = {
+#          'default':{
+#              'ENGINE':'django.db.backends.mysql',
+#              'NAME': 'phonegap_demo',
+#              'USER': 'root',
+#              'PASSWORD': 'root',
+#              'HOST' : 'localhost',
+#              'PORT' : '3306',
+#
+#          }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

@@ -2,11 +2,13 @@ from django.http import HttpResponse
 
 from TestModel.models import CourseDetails
 
+
 #for insert
-# def testdb(request):
-#         test1 = CourseDetails(title='test')
-#         test1.save()
-#         return HttpResponse("<p>add row success!</p>")
+def testdb(request):
+      test1 = CourseDetails(title='test1')
+      test1.save(using='other')
+      return HttpResponse("<p>add row success!</p>")
+
 
 #for select
 # def testdb(request):
@@ -46,15 +48,15 @@ from TestModel.models import CourseDetails
 
 
 #for delete
-def testdb(request):
-    #delete id = 1 row
-    test1 = CourseDetails.objects.get(id=1)
-    test1.delete()
-
-    #other method
-    #Test.objects.filter(id=1).delete()
-
-    #delete all
-    #Test.objects.all().delete()
-
-    return HttpResponse("<p>delete success </p>")
+# def testdb(request):
+#     #delete id = 1 row
+#     test1 = CourseDetails.objects.get(id=1)
+#     test1.delete()
+#
+#     #other method
+#     #Test.objects.filter(id=1).delete()
+#
+#     #delete all
+#     #Test.objects.all().delete()
+#
+#     return HttpResponse("<p>delete success </p>")
